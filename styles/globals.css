@@ -1,0 +1,386 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* fonts  */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Megrim&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+
+@font-face {
+  font-family: 'Megrim';
+  src: url('/font/Megrim-Regular.ttf');
+  font-style: medium;
+  font-weight: normal;
+  font-display: swap;
+}
+
+/* adding roboto font */
+/* 
+@font-face {
+  font-family: 'Roboto';
+  src: url('/font/Roboto-Black.ttf');
+  font-style: medium;
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/font/Roboto-Bold.ttf');
+  font-style: medium;
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/font/Roboto-Light.ttf');
+  font-style: medium;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/font/Roboto-Light.ttf');
+  font-style: medium;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/font/Roboto-Medium.ttf');
+  font-style: medium;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/font/Roboto-Regular.ttf');
+  font-style: medium;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/font/Roboto-Thin.ttf');
+  font-style: medium;
+  font-weight: 100;
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/font/Helvetica Neue Medium Extended');
+  font-style: medium;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/font/HelveticaNeueLTCom-Th.ttf');
+  font-style: medium;
+  font-weight: bold;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/font/Helvetica Neue UltraLight.ttf');
+  font-style: medium;
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/font/HelveticaNeueLTCom-Th.ttf');
+  font-style: medium;
+  font-weight: 400;
+  font-display: swap;
+}
+
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  color: white;
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-weight: bold; */
+  /* font-family: Roboto Mono, monospace, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.font-family-mono {
+  font-family: 'Helvetica', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.font-family-roboto {
+  font-family: 'Helvetica', sans-serif;
+}
+
+.font-family-Helvetica {
+  font-family: 'Helvetica', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.font-family-allerta {
+  font-family: 'Helvetica', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* preloader  */
+#preloader p {
+  position: relative;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: preloader-animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes preloader-animate {
+  0% {
+    background-position: -500%;
+  }
+
+  100% {
+    background-position: 500%;
+  }
+}
+
+/* home banner  */
+.innerBanner {
+  width: 100%;
+  height: 100%;
+  transition-property: clip-path, background-position-x, background-position-y;
+  transition-duration: 1s, 1s, 4s;
+  transition-delay: 0s, 0s, 1s;
+  position: relative;
+  z-index: 10;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  /* clip-path: polygon(31% 11%, 56% 11%, 78% 11%, 78% 25%, 78% 50%, 78% 67%, 78% 80%, 67% 89%, 43% 90%, 24% 83%, 23% 64%, 41% 71%, 59% 69%, 59% 58%, 58% 43%, 58% 25%, 30% 25%); */
+  /* my create url https://i.ibb.co/LZs5rqc/pjimage-1.jpg */
+  background: url('https://i.ibb.co/10wMBYk/istockphoto-1272432175-170667a.jpg ');
+  /* animation: animate 15s ease-in 0s infinite; */
+
+}
+
+@keyframes animateWords {
+  from {
+    background-position-y: 0%;
+  }
+
+  to {
+    background-position-y: 100%;
+  }
+
+  /* 0% {
+    background-position-y: 0;
+    clip-path: polygon(31% 11%, 56% 11%, 78% 11%, 78% 25%, 78% 50%, 78% 67%, 78% 80%, 67% 89%, 43% 90%, 24% 83%, 23% 64%, 41% 71%, 59% 69%, 59% 58%, 58% 43%, 58% 25%, 30% 25%);
+  }
+
+
+  25% {
+    clip-path: polygon(43% 25%, 39% 49%, 25% 56%, 30% 12%, 72% 10%, 86% 18%, 91% 58%, 80% 76%, 61% 81%, 31% 74%, 25% 54%, 36% 50%, 45% 64%, 73% 61%, 78% 44%, 74% 27%, 62% 24%);
+  }
+
+  50% {
+    clip-path: polygon(72% 13%, 72% 24%, 72% 35%, 71% 76%, 54% 16%, 31% 16%, 28% 86%, 43% 84%, 45% 24%, 48% 37%, 58% 84%, 86% 84%, 86% 70%, 86% 54%, 86% 37%, 86% 25%, 86% 13%);
+  }
+
+  75% {
+    background-position-y: 100%;
+    clip-path: polygon(72% 14%, 71% 45%, 45% 45%, 45% 31%, 45% 16%, 30% 16%, 28% 86%, 43% 86%, 43% 68%, 44% 57%, 70% 57%, 69% 86%, 86% 86%, 86% 54%, 86% 37%, 86% 25%, 87% 15%);
+  } */
+
+
+}
+
+/* chekcing */
+.letter {
+  background-image: url('https://i.ibb.co/swYz425/Untitled-1-copy-1.jpg');
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* my create url https://i.ibb.co/LZs5rqc/pjimage-1.jpg */
+  animation: animateWords 10s ease-in 0s infinite alternate-reverse;
+}
+
+
+/* google btn  */
+.g-sign-in-button {
+  margin: 10px;
+  display: inline-block;
+  width: 240px;
+  height: 50px;
+  background-color: #4285f4;
+  color: #fff;
+  border-radius: 1px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  transition: background-color .218s, border-color .218s, box-shadow .218s;
+}
+
+.g-sign-in-button:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 3px 3px rgba(66, 133, 244, 0.3);
+  box-shadow: 0 0 3px 3px rgba(66, 133, 244, 0.3);
+}
+
+.g-sign-in-button:active {
+  background-color: #3367D6;
+  transition: background-color 0.2s;
+}
+
+.g-sign-in-button .content-wrapper {
+  height: 100%;
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+.g-sign-in-button img {
+  width: 18px;
+  height: 18px;
+}
+
+.g-sign-in-button .logo-wrapper {
+  padding: 15px;
+  background: #fff;
+  width: 48px;
+  height: 100%;
+  border-radius: 1px;
+  display: inline-block;
+}
+
+.g-sign-in-button .text-container {
+  font-family: Roboto, arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: .21px;
+  font-size: 16px;
+  line-height: 48px;
+  vertical-align: top;
+  border: none;
+  display: inline-block;
+  text-align: center;
+  width: 180px;
+}
+
+/* blog card  */
+
+.blog-single-card-wrap:hover .title {
+  background-size: 100% 58px;
+}
+
+.title {
+  width: auto;
+  background-repeat: repeat-y;
+  background-image: linear-gradient(#ff020200 calc(100% - 38px), currentColor 2px);
+  background-image: -ms-linear-gradient(transparent 95%, currentColor 2px);
+  transition: .6s cubic-bezier(.215, .61, .355, 1);
+  background-size: 0px 58px;
+  display: inline;
+}
+
+/* dashboard */
+/* width */
+.dashboard-scrollBar::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+/* Track */
+.dashboard-scrollBar::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+.dashboard-scrollBar::-webkit-scrollbar-thumb {
+  background: rgb(177, 151, 20);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.dashboard-scrollBar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#demo-simple-select-standard-label {
+  color: red !important;
+}
+
+.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+  color: white !important;
+}
+
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  color: white;
+}
+
+#choose-category {
+  color: white !important;
+}
+
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  outline-color: white !important;
+}
+
+#choose-category-label {
+  color: white !important;
+}
+
+.mgbutton-bg {
+  background-image: linear-gradient(to right top, #fde440, #ffd07e, #ffcdc1, #ffdbf2, #ffedff, #f0f2ff, #e1f7ff, #dbfaff, #a6fefe, #6bffed, #2fffcb, #1dfd9b);
+}
+
+.bg-dot-wev {
+  background-image: url('https://i.ibb.co/g3d0nbF/Adobe-Stock-477001574.jpghttps://i.ibb.co/PMg67DS/3913646.webp');
+  background-size: cover;
+}
+
+.bg-lather {
+  background-image: url('https://i.ibb.co/mRS7jpz/3913646-1.webp');
+  background-size: cover;
+}
+
+.bg-chak {
+  background-image: url('https://i.ibb.co/n7xmh1M/NEW-Background.jpg');
+}
+
+.bg-light-dot {
+  background-image: url('https://i.ibb.co/GV0GFL8/Adobe-Stock-88204615.jpg');
+  background-size: cover;
+}
+
+.w-screen-30 {
+  width: 30vw;
+}

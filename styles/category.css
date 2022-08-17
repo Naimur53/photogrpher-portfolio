@@ -1,0 +1,114 @@
+ .singleImg {
+
+
+     transition: all .3s;
+ }
+
+ .singleImg:hover {
+     transform: scale(1.2);
+ }
+
+ .z-large {
+     z-index: 100000000000000000000;
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+
+ }
+
+ .overlay-img {
+     /* width: 80vw;
+     height: auto; */
+ }
+
+ .b-1 {
+     border-top: 1px solid white;
+     border-bottom: 1px solid white;
+     opacity: 0;
+     width: 0%;
+     transition: .3s;
+ }
+
+ .b-2 {
+     border-left: 1px solid white;
+     border-right: 1px solid white;
+     opacity: 0;
+     height: 0%;
+     transition: .4s;
+ }
+
+ .cate-single-wrap:hover .b-1 {
+     opacity: 1;
+     width: 100%
+ }
+
+ .cate-single-wrap:hover .b-2 {
+     opacity: 1;
+     height: 100%;
+ }
+
+ .category-card-img {
+     transition: .4s all ease;
+
+ }
+
+ .category-card-wrap:hover .category-card-img {
+     transform: scale(1.2);
+ }
+
+ .category-text-wrap {
+     clip-path: circle(1.4% at 0% 100%);
+     transition: .5s all ease;
+
+ }
+
+ .category-card-wrap:hover .category-text-wrap {
+     clip-path: circle(100% at 50% 100%);
+
+ }
+
+ .gallery {
+     position: relative;
+     font-family: sans-serif;
+     text-transform: uppercase;
+     font-size: 200px;
+     letter-spacing: 4px;
+     overflow: hidden;
+     background-image: linear-gradient(90deg, rgba(63, 63, 63, 1) 0%, rgba(255, 255, 255, 0.7819502801120448) 10%, rgba(63, 63, 63, 1) 20%);
+     background-repeat: no-repeat;
+     background-size: 80%;
+     animation: animate 3s alternate-reverse infinite;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: rgba(191, 58, 58, 0);
+ }
+
+
+ .word {
+     color: rgba(106, 106, 106, 0.6);
+ }
+
+ .over {
+     background-color: rgb(255, 255, 255);
+     mix-blend-mode: color-dodge;
+     animation: animate 10s alternate-reverse infinite ease-in-out;
+     box-shadow: 0px 34px 38px 84px white;
+     top: 30%;
+ }
+
+ @keyframes animate {
+     0% {
+         left: 0%;
+     }
+
+     100% {
+         left: 100%;
+
+     }
+ }
+
+ .image {
+     max-width: 100%;
+     height: auto;
+ }

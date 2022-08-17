@@ -1,0 +1,40 @@
+.about-overlay {
+    will-change: transform;
+    transform: translate3d(0px, 0px, 0px);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 100%;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    display: none;
+}
+
+.john-1 {
+    filter: invert(1);
+}
+
+.shadow-overlay {
+    box-shadow: 27px 0px 36px 35px black;
+}
+
+.ellips {
+    clip-path: ellipse(15% 20% at 50% 50%);
+}
+
+
+.middle-image {
+    transform: scale(1.5);
+}
+
+.border-gradient-2 {
+    background:
+        linear-gradient(black, black) padding-box,
+        linear-gradient(to right top, #fde440, #ffd07e) border-box;
+    border: 1px solid transparent;
+}
+
+.glass-bg {
+    background: rgba(255, 255, 255, 0.036);
+    backdrop-filter: blur(10px);
+}

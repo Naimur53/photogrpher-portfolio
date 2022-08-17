@@ -1,0 +1,38 @@
+.blog-wrap {
+    will-change: transform;
+    transform-style: preserve-3d;
+    transform: translate3d(0px, 0px, 0px);
+    transition: all .7s ease-out;
+}
+
+.second {
+    top: -100%;
+}
+
+.overlay-wrap div {
+    box-shadow: 10px 0px 60px 60px black;
+    background: black;
+    padding: 4px;
+
+}
+
+.description {
+    white-space: pre;
+}
+
+.phone-shadow {
+    box-shadow: 10px 10px 17px 2px black;
+    margin-top: -10;
+}
+
+.phone-shadow2 {
+    box-shadow: 10px 10px 17px 2px black;
+}
+
+
+@-moz-document url-prefix() {
+    .moz-blur {
+        background-color: rgba(0, 0, 0, 0.723);
+
+    }
+}
