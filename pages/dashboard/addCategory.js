@@ -64,7 +64,7 @@ const AddCategory = ({ uniqCategory }) => {
         }
 
         // sending to api
-        axios.post('https://stark-atoll-95180.herokuapp.com/category', { mainData: data, user: user?.email }, {
+        axios.post('https://jhon-portfolio-server-production.up.railway.app/category', { mainData: data, user: user?.email }, {
             headers: {
                 authorization: 'Bearer ' + localStorage.getItem('idToken')
             },
@@ -342,7 +342,7 @@ AddCategory.Layout = DashboardLayout;
 export default AddCategory;
 export async function getServerSideProps() {
     // Fetch data from external API
-    const res = await fetch(`https://stark-atoll-95180.herokuapp.com/uniqCategory`)
+    const res = await fetch(`https://jhon-portfolio-server-production.up.railway.app/uniqCategory`)
     const data = await res.json()
 
     // Pass data to the page via props

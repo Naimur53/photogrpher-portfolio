@@ -99,7 +99,7 @@ const BlogSectionUpdate = ({ register, description, img, title, index, setData, 
             formData.append("video", file[0]);
 
             // sending to api
-            axios.post('https://stark-atoll-95180.herokuapp.com/video', formData, {
+            axios.post('https://jhon-portfolio-server-production.up.railway.app/video', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

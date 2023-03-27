@@ -160,7 +160,7 @@ export default function Home() {
 }
 // export async function getServerSideProps() {
 //   // Fetch data from external API
-//   const res = await fetch(`https://stark-atoll-95180.herokuapp.com/category`)
+//   const res = await fetch(`https://jhon-portfolio-server-production.up.railway.app/category`)
 //   const data = await res.json()
 //   console.log('server', res);
 
@@ -169,7 +169,7 @@ export default function Home() {
 // } 
 export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async () => {
-    const allUrl = [fetch(`https://stark-atoll-95180.herokuapp.com/category?short=true`), fetch('https://stark-atoll-95180.herokuapp.com/blog?short=true')]
+    const allUrl = [fetch(`https://jhon-portfolio-server-production.up.railway.app/category?short=true`), fetch('https://jhon-portfolio-server-production.up.railway.app/blog?short=true')]
     const [res1, res2] = await Promise.all(allUrl)
     // const datas = await res.map(single => single.json());
     console.log({ res1 });

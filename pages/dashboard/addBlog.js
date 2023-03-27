@@ -49,7 +49,7 @@ const AddBlog = () => {
         const mainData = { img, tags, heading, description, address, sections };
         console.log(mainData);
         setPostLoading(true)
-        axios.post('https://stark-atoll-95180.herokuapp.com/blog', { mainData, user: user?.email }, {
+        axios.post('https://jhon-portfolio-server-production.up.railway.app/blog', { mainData, user: user?.email }, {
             headers: {
                 authorization: 'Bearer ' + localStorage.getItem('idToken')
             },

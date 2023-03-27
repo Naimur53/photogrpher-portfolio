@@ -16,7 +16,7 @@ const UpdateBlog = () => {
     const { query: { id } } = useRouter();
     const { user } = useSelector(allData)
     const { data: res, error } = useSWR(
-        `https://stark-atoll-95180.herokuapp.com/blog?id=${id}`,
+        `https://jhon-portfolio-server-production.up.railway.app/blog?id=${id}`,
         fetcher
     );
     const [data, setData] = useState({})
@@ -136,7 +136,7 @@ const UpdateBlog = () => {
             sections: createSection,
         }
         console.log(create);
-        axios.put(`https://stark-atoll-95180.herokuapp.com/blog?id=${data._id}`, { mainData: create, user: user?.email }, {
+        axios.put(`https://jhon-portfolio-server-production.up.railway.app/blog?id=${data._id}`, { mainData: create, user: user?.email }, {
             headers: {
                 authorization: 'Bearer ' + localStorage.getItem('idToken')
             },
