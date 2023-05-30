@@ -37,7 +37,7 @@ const RoundedServiceCart = ({ info }) => {
 
     return (
         <div className='bg-gray-900 rounded-md w-full' style={{ height: 300, }}>
-            <ResponsivePie
+            {/* <ResponsivePie
                 data={data}
                 margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
                 innerRadius={0.5}
@@ -154,7 +154,7 @@ const RoundedServiceCart = ({ info }) => {
                     },
                 ]}
 
-            />
+            /> */}
         </div>
     );
 };
