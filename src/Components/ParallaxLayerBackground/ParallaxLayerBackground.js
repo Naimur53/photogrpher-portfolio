@@ -6,7 +6,7 @@ import Image from 'next/image';
 const ParallaxLayerBackground = ({ className, factor, offset, url, speed, style }) => {
 
     const [ref, inView] = useInView()
-    console.log({ offset, inView });
+
     return (
         <ParallaxLayer
             offset={offset}

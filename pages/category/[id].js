@@ -116,7 +116,7 @@ export default CategoryDetails;
 export async function getServerSideProps({ params }) {
     const res = await fetch(`https://jhon-portfolio-server-production.up.railway.app/singleCategory?id=${params.id}`)
     const data = await res.json();
-    console.log(data);
+
     if (!data) {
         return {
             props: {

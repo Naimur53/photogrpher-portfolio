@@ -46,7 +46,7 @@ export async function getServerSideProps() {
     // Fetch data from external API
     const res = await fetch(`https://jhon-portfolio-server-production.up.railway.app/category?normal=true`)
     const data = await res.json()
-    console.log('server', res);
+
 
     // Pass data to the page via props
     return { props: { data } }

@@ -11,7 +11,7 @@ const ContactForm = () => {
 
         axios.post('https://jhon-portfolio-server-production.up.railway.app/sendMail', { ...data, subject: `${data.displayName} try to contact you` })
             .then(res => {
-                console.log(res);
+
                 if (res.data.res !== 'error') {
                     toast.success('Message Send Successfully', {
                         position: "bottom-right",

@@ -20,7 +20,7 @@ const AddCategory = ({ uniqCategory }) => {
     const [imgLoading, setImgLoading] = useState(false);
     const { user } = useSelector(allData);
     const [inputValue, setInputValue] = useState('');
-    console.log(watch('categoryName'));
+
     const onSubmit = data => {
         if (inputValue === 'new' && uniqCategory.includes(data.categoryName)) {
             toast.error('Choose a uniq category name', {
@@ -37,7 +37,7 @@ const AddCategory = ({ uniqCategory }) => {
         if (inputValue === 'new') {
             delete data.subCategory
         }
-        console.log(data);
+
         if (!data.thumbnail) {
             toast.error('Thumbnail image not found', {
                 position: "bottom-right",
@@ -70,7 +70,7 @@ const AddCategory = ({ uniqCategory }) => {
             },
         })
             .then(res => {
-                console.log(res, 'success');
+
                 toast.success('Category successfully added', {
                     position: "bottom-right",
                     autoClose: 5000,
@@ -82,7 +82,7 @@ const AddCategory = ({ uniqCategory }) => {
                 });
             })
             .catch(err => {
-                console.log(err);
+
                 if (e.response?.data?.error === 'UnAuthorize') {
 
                     toast.error('UnAuthorize try to reload or re-login to the site ' + e.message, {
@@ -106,14 +106,14 @@ const AddCategory = ({ uniqCategory }) => {
                     });
                 }
             })
-        console.log(data);
+
         reset();
 
 
     }
     // handle multiple img upload 
     const handleChangeUrl = watch('url')
-    console.log(handleChangeUrl)
+
     useEffect(() => {
 
 
@@ -124,7 +124,7 @@ const AddCategory = ({ uniqCategory }) => {
             bgUrl = watch('photos').map(single => `url("${single.url}")`)
             return bgUrl.join(',')
         }
-        console.log(bgUrl.join(','));
+
         return bgUrl;
     }
     //handle thumbnails image upload 
@@ -141,7 +141,7 @@ const AddCategory = ({ uniqCategory }) => {
     };
     const handleThumbnailFile = e => {
         const file = e.target.files;
-        console.log(file);
+
         if (file.length) {
             setThumbnailLoading(true)
             let body = new FormData()
@@ -153,13 +153,13 @@ const AddCategory = ({ uniqCategory }) => {
                 data: body
             })
                 .then(res => {
-                    console.log(res.data.data.url);
+
                     setValue('thumbnail', res.data.data.url)
                 })
                 .catch(e => {
                     setValue('thumbnailFile', []);
                     setValue('thumbnail', '');
-                    console.log(e);
+
                     toast.error('Something bad happened to upload multiple image', {
                         position: "bottom-right",
                         autoClose: 5000,
@@ -178,11 +178,11 @@ const AddCategory = ({ uniqCategory }) => {
     //photos upload
     const handlePhotosUpload = (e) => {
         const file = e.target.files
-        console.log('file', file);
+
         if (file.length) {
             setImgLoading(true)
             const main = Object.values(file).map(singleFile => {
-                console.log();
+
                 let body = new FormData()
                 body.set('key', process.env.NEXT_PUBLIC_IMAGEBB_API)
                 body.append('image', singleFile)
@@ -193,16 +193,16 @@ const AddCategory = ({ uniqCategory }) => {
                 })
             })
             Promise.all(main).then(res => {
-                console.log('all', res);
+
                 const allUrl = res.map(singleRes => singleRes.data.data?.url)
                 setValue('photos', allUrl);
-                console.log('url', allUrl);
+
                 setImgLoading(false);
 
             }).catch(e => {
                 setValue('photos', []);
                 setValue('url', [])
-                console.log(e);
+
                 toast.error('Something bad happened to upload multiple image', {
                     position: "bottom-right",
                     autoClose: 5000,

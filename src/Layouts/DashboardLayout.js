@@ -41,7 +41,7 @@ const DashboardLayout = ({ children, window }) => {
     useEffect(() => {
 
     }, [loading, router, user])
-    console.log(loading, user)
+
 
     if (loading) {
         return <div className="h-screen items-center flex justify-center">

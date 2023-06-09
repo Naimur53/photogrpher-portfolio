@@ -24,7 +24,7 @@ const Footer = () => {
 
                                     <LocationOnIcon></LocationOnIcon>
                                 </div>
-                                <p className="mt-3">Havenstraat 19a, 6171 ED Stein, The Netherlands</p>
+                                <p className="mt-3">Kuchiamora Munshigonj Dhaka Bangladesh</p>
 
                             </div>
                         </Grid>
@@ -35,7 +35,7 @@ const Footer = () => {
 
                                     <MailOutlineIcon></MailOutlineIcon>
                                 </div>
-                                <p className="mt-3">info@johnbaggen.com</p>
+                                <p className="mt-3">client@gmail.com</p>
 
                             </div>
 
@@ -47,7 +47,7 @@ const Footer = () => {
 
                                     <ConnectWithoutContactIcon></ConnectWithoutContactIcon>
                                 </div>
-                                <p className="mt-3"> +31 6 5153 1805</p>
+                                <p className="mt-3"> +01 0 000 0000</p>
 
                             </div>
 

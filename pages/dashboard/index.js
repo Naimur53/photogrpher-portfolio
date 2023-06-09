@@ -29,7 +29,7 @@ const Dashboard = (props) => {
         const allUrl = [axios.get('https://jhon-portfolio-server-production.up.railway.app/totalUser'), axios.get('https://jhon-portfolio-server-production.up.railway.app/totalCategories'), axios.get('https://jhon-portfolio-server-production.up.railway.app/blogTotalLC'), axios.get('https://jhon-portfolio-server-production.up.railway.app/last7blog'), axios.get('https://jhon-portfolio-server-production.up.railway.app/blogCount')]
         Promise.all(allUrl)
             .then(res => {
-                console.log(res);
+
                 setUsers(res[0].data?.user)
                 setCategories(res[1].data?.categories)
                 const allBlogLC = res[2].data;
@@ -138,17 +138,17 @@ const Dashboard = (props) => {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} md={7}>
+                <Grid item xs={12}  >
                     <RecentMomentChart data={last7Post}></RecentMomentChart>
                 </Grid>
                 <Grid item xs={12} md={5}>
-                    <RoundedServiceCart info={
+                    {/* <RoundedServiceCart info={
                         {
                             blogLC,
                             users,
                             categories,
                         }
-                    } ></RoundedServiceCart>
+                    } ></RoundedServiceCart> */}
                 </Grid>
             </Grid>
         </div>

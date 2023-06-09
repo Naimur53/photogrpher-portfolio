@@ -29,7 +29,7 @@ export default function Home() {
       dispatch(addScrollValue(parallaxRef.current.current / parallaxRef.current.space))
     }
     return () => {
-      console.log('ic clalsd');
+
       return dispatch(addScrollValue(0))
     }
   })
@@ -162,7 +162,7 @@ export default function Home() {
 //   // Fetch data from external API
 //   const res = await fetch(`https://jhon-portfolio-server-production.up.railway.app/category`)
 //   const data = await res.json()
-//   console.log('server', res);
+//   
 
 //   // Pass data to the page via props
 //   return { props: { data } }
@@ -172,7 +172,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
     const allUrl = [fetch(`https://jhon-portfolio-server-production.up.railway.app/category?short=true`), fetch('https://jhon-portfolio-server-production.up.railway.app/blog?short=true')]
     const [res1, res2] = await Promise.all(allUrl)
     // const datas = await res.map(single => single.json());
-    console.log({ res1 });
+
     const category = await res1.json()
     const blogs = await res2.json()
 

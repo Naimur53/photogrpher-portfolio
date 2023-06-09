@@ -24,7 +24,7 @@ const AddBlog = () => {
     const createObj = (title, url, description, img, video) => {
         return { title, url, description, img, video }
     }
-    console.log('errors', errors);
+
     const onSubmit = data => {
 
         const { tags, img, heading, description, address, tagsRaw } = data
@@ -47,14 +47,14 @@ const AddBlog = () => {
         })
         // create main data for post 
         const mainData = { img, tags, heading, description, address, sections };
-        console.log(mainData);
+
         setPostLoading(true)
         axios.post('https://jhon-portfolio-server-production.up.railway.app/blog', { mainData, user: user?.email }, {
             headers: {
                 authorization: 'Bearer ' + localStorage.getItem('idToken')
             },
         }).then(res => {
-            console.log(res);
+
             toast.success('Successfully post the blog', {
                 position: "bottom-right",
                 autoClose: 5000,
@@ -69,7 +69,7 @@ const AddBlog = () => {
 
         })
             .catch(e => {
-                console.log(e.response?.data?.error);
+
                 setPostLoading(false)
 
                 if (e.response?.data?.error === 'UnAuthorize') {
@@ -98,17 +98,17 @@ const AddBlog = () => {
     }
 
     // handle main section img upload 
-    console.log('all', numSection);
+
     const handleComplete = (num, isComplete) => {
         if (isComplete) {
             const old = [...numSection];
-            console.log(old[num - 1]);
+
             old[num - 1] = { num, complete: true }
             setNumSection(old);
         }
     }
     const handleDelete = (num) => {
-        console.log(num);
+
         //unregister that filed 
         const fields = ['title', 'description', 'img', 'video', 'url']
         fields.forEach((field, i) => {
@@ -122,9 +122,9 @@ const AddBlog = () => {
         setValue(`video${num}`, []);
 
         setNumSection(pre => {
-            console.log(watch(`title${num}`));
+
             pre.filter(preNum => preNum.num !== num).forEach((element, i) => {
-                console.log(i);
+
                 setValue(`title${i + 1}`, watch(`title${element.num}`))
                 setValue(`url${i + 1}`, watch(`url${element.num}`))
                 setValue(`description${i + 1}`, watch(`description${element.num}`))
@@ -140,7 +140,7 @@ const AddBlog = () => {
     }
     const addTags = e => {
         if (e.key === 'Enter') {
-            console.log('add tages ', e.target.value);
+
             if (watch('tags')) {
 
                 setValue('tags', [...watch('tags'), e.target.value])
@@ -153,7 +153,7 @@ const AddBlog = () => {
         }
     }
     const handleDeleteTags = (i) => {
-        console.log(i);
+
         const without = watch('tags').filter((tag, index) => index !== i)
         setValue('tags', without)
 
@@ -161,7 +161,7 @@ const AddBlog = () => {
 
     const handleMainImg = (e) => {
         const file = e.target.files;
-        console.log(file);
+
         if (file.length) {
             setImgLoading(true)
             let body = new FormData()
@@ -173,7 +173,7 @@ const AddBlog = () => {
                 data: body
             })
                 .then(res => {
-                    console.log(res.data.data.url);
+
                     setValue('img', res.data.data.url)
                 })
                 .catch(e => {
