@@ -21,6 +21,7 @@ const Aboutme = () => {
         if (!parallaxRef.current || !parallaxRef.current.container) return
         parallaxRef.current.container.current.onscroll = () => {
             dispatch(addScrollValue(parallaxRef.current.current / parallaxRef.current.space))
+            console.log(parallaxRef.current.current / parallaxRef.current.space)
         }
         return () => {
             return dispatch(addScrollValue(0))
@@ -50,7 +51,7 @@ const Aboutme = () => {
             <ParallaxLayer
                 offset={0}
                 speed={.5}
-                sticky={{ start: 0, end: 6 }}
+                sticky={{ start: 0, end: 5.2 }}
                 style={{
                     zIndex: -1
                 }}
