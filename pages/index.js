@@ -150,22 +150,18 @@ export default function Home() {
 }
 // export async function getServerSideProps() {
 //   // Fetch data from external API
-//   const res = await fetch(`https://jhon-portfolio-server-production.up.railway.app/category`)
+//   const res = await fetch(`https://jhon-portfolio-server.vercel.app/category`)
 //   const data = await res.json()
 //
 
 //   // Pass data to the page via props
 //   return { props: { data } }
 // }
-export const getServerSideProps = wrapper.getServerSideProps(
+export const getServerSideProps = wrapper.getStaticProps(
   (store) => async () => {
     const allUrl = [
-      fetch(
-        `https://jhon-portfolio-server-production.up.railway.app/category?short=true`
-      ),
-      fetch(
-        "https://jhon-portfolio-server-production.up.railway.app/blog?short=true"
-      ),
+      fetch(`https://jhon-portfolio-server.vercel.app/category?short=true`),
+      fetch("https://jhon-portfolio-server.vercel.app/blog?short=true"),
     ];
     const [res1, res2] = await Promise.all(allUrl);
     // const datas = await res.map(single => single.json());
@@ -175,5 +171,6 @@ export const getServerSideProps = wrapper.getServerSideProps(
 
     store.dispatch(addHomeCategory(category));
     store.dispatch(addHomeBlog(blogs));
+    store.dispatch(addCollection(store.getState().data.collection));
   }
 );

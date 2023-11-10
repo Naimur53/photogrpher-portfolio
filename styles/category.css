@@ -87,6 +87,7 @@
 
  .word {
      color: rgba(106, 106, 106, 0.6);
+     background-color: transparent;
  }
 
  .over {
